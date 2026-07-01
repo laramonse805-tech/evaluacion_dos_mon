@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aysén Vivo - Turismo Sostenible</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">🏔️ Aysén Vivo</div>
+            <nav>
+                <ul>
+                    <li><a href="#experiencias">Experiencias</a></li>
+                    <li><a href="#reserva">Reservar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero section con el contexto regional -->
+        <section class="hero">
+            <h1>Aysén Vivo</h1>
+            <p class="subtitle">Plataforma de Experiencias Turísticas Sostenibles • Región de Aysén, Patagonia</p>
+            <div class="features">
+                <div class="feature-card">🏔️ <strong>Emprendedores locales</strong> de Coyhaique, Puerto Aysén, Chile Chico, Cochrane y Tortel.</div>
+                <div class="feature-card">♻️ <strong>Turismo de bajo impacto</strong> controlando rigurosamente el cupo máximo.</div>
+                <div class="feature-card">⛵ <strong>Difusión y reserva</strong> directa y transparente.</div>
+            </div>
+        </section>
+
+        <!-- Sección de Catálogo y Filtros -->
+        <section id="experiencias" class="catalog-section">
+            <h2>Nuestras Experiencias</h2>
+            
+            <div class="filters-container" id="filters-container">
+                <button class="filter-btn active" data-category="Todos">Todos</button>
+                <button class="filter-btn" data-category="Navegación">Navegación</button>
+                <button class="filter-btn" data-category="Trekking">Trekking</button>
+                <button class="filter-btn" data-category="Pesca">Pesca</button>
+                <button class="filter-btn" data-category="Cultura">Cultura</button>
+            </div>
+
+            <div class="main-layout">
+                <!-- Grid de Tarjetas Dinámicas -->
+                <div class="cards-grid" id="cards-grid"></div>
+
+                <!-- Formulario de Reserva -->
+                <aside id="reserva" class="booking-sidebar">
+                    <h3>Reserva tu experiencia</h3>
+                    <form id="booking-form" novalidate>
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" id="nombre" placeholder="Ej: Juan Pérez">
+                            <span class="error-msg" id="error-nombre"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="juan@correo.com">
+                            <span class="error-msg" id="error-email"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experiencia-select">Experiencia</label>
+                            <select id="experiencia-select">
+                                <option value="">Selecciona una experiencia</option>
+                            </select>
+                            <span class="error-msg" id="error-experiencia"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="personas">N° de personas</label>
+                            <input type="number" id="personas" min="1" placeholder="Cantidad de cupos">
+                            <span class="error-msg" id="error-personas"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha">Fecha</label>
+                            <input type="date" id="fecha">
+                            <span class="error-msg" id="error-fecha"></span>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Reservar</button>
+                        
+                        <div class="success-box hidden" id="success-message">
+                            ✅ ¡Reserva confirmada exitosamente!
+                        </div>
+                    </form>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Programación Front End • UA2 • INACAP | 🌲 Conserva la Patagonia limpia</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
